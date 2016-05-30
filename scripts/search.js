@@ -12,9 +12,11 @@
             success: function (data) {
                 debugger;
                 data.results.forEach(function (game) {
-                    $('#gameResult').append('<li>' + game.name + '</li>');
-                    $('#picResult').append('<li><img src=' + game.image.medium_url + '></li>');
+                    $('#searchResults').append('<tr><td class='+'eztd'+'>'+ game.name + '<img class='+'ezimg'+ ' src=' + game.image.icon_url + '>' + '</td></tr>');
+                    
                 })
             }
         })
 });
+
+
