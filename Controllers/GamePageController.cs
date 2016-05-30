@@ -16,5 +16,12 @@ namespace SteamApiTest.Controllers
             ViewBag.sq = searchValue;
             return View();
         }
+
+
+        public ActionResult GameProfile(string gameID)
+        {
+          
+            return View();
+        }
     }
 }

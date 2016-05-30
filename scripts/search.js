@@ -12,7 +12,7 @@
             success: function (data) {
                 debugger;
                 data.results.forEach(function (game) {
-                    $('#searchResults').append('<tr><td class='+'eztd'+'>'+ game.name + '<img class='+'ezimg'+ ' src=' + game.image.icon_url + '>' + '</td></tr>');
+                    $('#searchResults').append('<tr><td class='+'eztd>'+ game.name + '<img class='+'ezimg'+ ' src=' + game.image.icon_url + '>' + '</td></tr>');
                     
                 })
             }

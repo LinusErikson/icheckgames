@@ -157,6 +157,7 @@
     <None Include="scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\GameProfile.js" />
     <Content Include="scripts\hehe.css" />
     <Content Include="scripts\jquery-2.2.3.js" />
     <Content Include="scripts\jquery-2.2.3.min.js" />
@@ -189,6 +190,7 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="scripts\jquery-2.2.3.min.map" />
     <Content Include="Views\GamePage\Game.cshtml" />
+    <Content Include="Views\GamePage\GameProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
