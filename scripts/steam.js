@@ -7,13 +7,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (fList) {
                 fList = JSON.parse(fList);
-                $('#username').text(fList.response.players[0].personaname)
-            }
-        });
-
-        $.ajax({
-            type: 'GET',
-            url: "/Default/getRecentGame",
+                $('#username').text(fList.response.players[0].pe:w            url: "/Default/getRecentGame",
             dataType: 'json',
             success: function (data) {
                 data = JSON.parse(data);
