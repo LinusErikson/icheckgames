@@ -20,7 +20,9 @@ namespace SteamApiTest.Controllers
 
         public ActionResult GameProfile(string gameID)
         {
-          
+
+            TempData["CurrentUrl"] = Request.Url.ToString();
+
             return View();
         }
     }

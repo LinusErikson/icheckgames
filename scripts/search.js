@@ -12,8 +12,18 @@
             success: function (data) {
                 debugger;
                 data.results.forEach(function (game) {
-                    $('#searchResults').append('<tr><td class='+'eztd>'+ game.name + '<img class='+'ezimg'+ ' src=' + game.image.icon_url + '>' + '</td></tr>');
-                    
+                    $('#searchResults').append('<tr class='+'eztr'+' data-url="@Url.Action("GamePage","GameProfile", new {id =' + game.id + '})><td class='+'eztd>'+ game.name + '<img class='+'ezimg'+ ' src=' + game.image.icon_url + '>' + '</td></tr>');
+
+
+
+                    $('.eztr').click(function () {
+                        window.location.href = $(this).attr('url');
+                    });
+
+
+
+
+                  
                 })
             }
         })
