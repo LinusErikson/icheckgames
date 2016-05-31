@@ -1,21 +1,74 @@
-﻿
 @{
-    ViewBag.Title = "Index";
+Layout = null;
+ViewBag.Test = "test";
+<link href="Content/bootstrap.css" rel="stylesheet">
+<link href="Content/styles.css" rel="stylesheet">
+<script src="Scripts/jquery-1.9.1.js"></scrip>
+<script src="Scripts/bootstrap.js">
+</script>
+<script src="Scripts/api.js"></script>
 }
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Home</title>
+   </head>
+   <body>
+      <div class="container">
+         <div class="row">
+            <br/>
 
-<h1>friends</h1>
+            <div class="col-lg-3 col-sm-4 col-xs-6">
+               <a href="#" class="thumbnail"> <img src="http://placehold.it/350x400" class="img-responsive"></a>
+               <div class="text-center">
+                  <label class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></label>
+                  <label class="label label-warning"><span class="glyphicon glyphicon-comment"></span></label>
+                  <label class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></label>
+               </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6">
+               <a href="#" class="thumbnail"> <img src="http://placehold.it/350x400" class="img-responsive"></a>
+               <div class="text-center">
+                  <label class="pullup label label-info"><span class="glyphicon glyphicon-info-sign"></span></label>
+                  <label class="label label-warning"><span class="glyphicon glyphicon-comment"></span></label>
+                  <label class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></label>
+               </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6">
+               <a href="#" class="thumbnail"> <img src="http://placehold.it/350x400" class="img-responsive"></a>
+               <div class="text-center">
+                  <label class="pullup label label-info"><span class="glyphicon glyphicon-info-sign"></span></label>
+                  <label class="label label-warning"><span class="glyphicon glyphicon-comment"></span></label>
+                  <label class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></label>
+               </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-6">
+               <a href="#" class="thumbnail"> <img src="http://placehold.it/350x400" class="img-responsive"></a>
+               <div class="text-center">
+                  <label class="pullup label label-info"><span class="glyphicon glyphicon-info-sign"></span></label>
+                  <label class="label label-warning"><span class="glyphicon glyphicon-comment"></span></label>
+                  <label class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></label>
+               </div>
+            </div>
+
+            <p id="#result">results:</p>
+            <hr>
+
+            <div class="form-group"">
+               <div class="input-group">
+                  <input type="text" class="form-control" placeholder="search">
+                  <span class="input-group-addon">
+                  <a href="#"><span class="glyphicon glyphicon-search"></span></a>
+                  </span>
+               </div>
+            </div>
 
 
-<div id="username"></div>
 
-
-<ul id="recentlyGame"><strong>Recently played games:</strong></ul>
-
-<br />
-
-<ul id="recentlyGame1"><strong>searchresults:</strong></ul>
-
-<ul id="bilder">
-   
-</ul>
-
+         </div>
+      </div>
+   </body>
+</html>
