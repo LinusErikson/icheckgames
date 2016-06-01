@@ -15,6 +15,11 @@ namespace SteamApiTest
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
 
+        protected void Session_Start(Object sender, EventArgs e)
+        {
+            
+        }
+
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
