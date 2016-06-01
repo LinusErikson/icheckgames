@@ -6,6 +6,7 @@ ViewBag.Test = "test";
 <script src="Scripts/jquery-1.9.1.js"></script>
 <script src="Scripts/bootstrap.js"></script>
 <script src="Scripts/api.js"></script>
+<script src="Scripts/picfillback.js"></script>
 }
 <!DOCTYPE html>
 <html>
@@ -13,86 +14,80 @@ ViewBag.Test = "test";
       <title>Home</title>
    </head>
    <body>
-   <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <nav class="navbar navbar-default">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="#">x</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">Link</a></li>
+                  <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                     <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+               </form>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#">Link</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
       <div class="container">
          <div class="row">
-
             <div class="col-lg-3 col-sm-4 col-xs-6">
-               <a href="#" class="thumbnail"> <img src="http://placehold.it/350x400" class="img-responsive"></a>
+               <a href="#" class="thumbnail"> <img id="#imgOne" src="http://placehold.it/350x400" class="img-responsive"></a>
                <div class="text-center">
-                  <label class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></label>
-                  <button type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
-                  <label class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></label>
-               </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-4 col-xs-6">
-               <a href="#" class="thumbnail"> <img src="http://placehold.it/350x400" class="img-responsive"></a>
-               <div class="text-center">
-                  <label class="pullup label label-info"><span class="glyphicon glyphicon-info-sign"></span></label>
-                  <button type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
-                  <label class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></label>
-               </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-4 col-xs-6">
-               <a href="#" class="thumbnail"> <img src="http://placehold.it/350x400" class="img-responsive"></a>
-               <div class="text-center">
-                  <label class="pullup label label-info"><span class="glyphicon glyphicon-info-sign"></span></label>
-                  <button type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
-                  <label class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></label>
-               </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-4 col-xs-6">
-               <a href="#" class="thumbnail"> <img src="http://placehold.it/350x400" class="img-responsive"></a>
-               <div class="text-center">
-                  <button type="button" class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></button>
+                  <button type="bytton" class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></button>
                   <button type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
                   <button type="button" class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></button>
                </div>
             </div>
-
+            <div class="col-lg-3 col-sm-4 col-xs-6">
+               <a href="#" class="thumbnail"> <img id="imgTwo" src="http://placehold.it/350x400" class="img-responsive"></a>
+               <div class="text-center">
+                  <button type="bytton" class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></button>
+                  <button type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
+                  <button type="button" class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></button>
+               </div>
+            </div>
+            <div class="col-lg-3 col-sm-4 col-xs-6">
+               <a href="#" class="thumbnail"> <img id="imgThree" src="http://placehold.it/350x400" class="img-responsive"></a>
+               <div class="text-center">
+                  <button type="button" class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></button>
+                  <button type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
+                  <button class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></button>
+               </div>
+            </div>
+            <div class="col-lg-3 col-sm-4 col-xs-6">
+               <a href="#" class="thumbnail"> <img id="imgFour" src="http://placehold.it/350x400" class="img-responsive"></a>
+               <div class="text-center">
+                  <button type="button" class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></button>
+                  <button id="" type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
+                  <button type="button" class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></button>
+               </div>
+            </div>
             <p id="#result">results:</p>
             <hr>
 
@@ -105,91 +100,75 @@ ViewBag.Test = "test";
                </div>
             </div>
 
+            <!-- Modal Comments -->
+            <div class="modal" id="modal-comments" role="dialog">
+               <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Comments</h4>
+                     </div>
+                     <div class="modal-body">
+                        <div class="actionBox">
+                           <ul class="commentList">
+                              <li>
+                                 <div class="commenterImage">
+                                    <img src="http://lorempixel.com/50/50/people/6" />
+                                 </div>
+                                 <div class="commentText">
+                                    <p class="">Hello this is a test comment.</p>
+                                    <span class="date sub-text">on March 5th, 2014</span>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="commenterImage">
+                                    <img src="http://lorempixel.com/50/50/people/7" />
+                                 </div>
+                                 <div class="commentText">
+                                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.
+                                    </p>
+                                    <span class="date sub-text">on Dec 12th, 1984</span>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="commenterImage">
+                                    <img src="http://lorempixel.com/50/50/people/9" />
+                                 </div>
+                                 <div class="commentText">
+                                    <p class="">Hello this is a test comment.</p>
+                                    <span class="date sub-text">on Sep 11th, 2006</span>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="commenterImage">
+                                    <img src="http://lorempixel.com/50/50/people/3" />
+                                 </div>
+                                 <div class="commentText">
+                                    <p class="">hello world friends.</p>
+                                    <span class="date sub-text">on May 31th, 2016</span>
+                                 </div>
+                              </li>
+                           </ul>
+                           <form class="form-inline" role="form">
+                              <div class="form-group">
+                                 <input class="form-control" type="text" placeholder="Your comments" />
+                              </div>
+                              <div class="form-group">
+                                 <button class="btn btn-success">Add</button>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                     </div>
 
+                  </div>
+               </div>
 
-
-
-
-  <!-- Modal Comments -->
-  <div class="modal" id="modal-comments" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Comments</h4>
-        </div>
-
-        <div class="modal-body">
-
-    <div class="actionBox">
-        <ul class="commentList">
-
-            <li>
-                <div class="commenterImage">
-                  <img src="http://lorempixel.com/50/50/people/6" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="commenterImage">
-                  <img src="http://lorempixel.com/50/50/people/7" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.
-                    </p> <span class="date sub-text">on March 5th, 2014</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="commenterImage">
-                  <img src="http://lorempixel.com/50/50/people/9" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-                </div>
-            </li>
-
-
-            <li>
-                <div class="commenterImage">
-                  <img src="http://lorempixel.com/50/50/people/3" />
-                </div>
-                <div class="commentText">
-                    <p class="">hello world niggas.</p> <span class="date sub-text">on May 31th, 2016</span>
-                </div>
-            </li>
-
-
-        </ul>
-        <form class="form-inline" role="form">
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Your comments" />
             </div>
-            <div class="form-group">
-                <button class="btn btn-success">Add</button>
-            </div>
-        </form>
-	</div>
-    </div>
-
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-
-
-
          </div>
       </div>
-
    </body>
 </html>
