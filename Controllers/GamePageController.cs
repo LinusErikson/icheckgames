@@ -4,14 +4,25 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace SteamApiTest.Controllers
 {
     public class GamePageController : Controller
     {
         // GET: GamePage
-        public ActionResult Game(string searchString)
+        public ActionResult Game()
         {
-            ViewBag.searchString = searchString;
+            var searchValue = Request.QueryString["search"];
+            ViewBag.sq = searchValue;
+            return View();
+        }
+
+
+        public ActionResult GameProfile(string gameID)
+        {
+
+            TempData["CurrentUrl"] = Request.Url.ToString();
+
             return View();
         }
     }

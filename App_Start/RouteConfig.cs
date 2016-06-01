@@ -18,7 +18,17 @@ namespace SteamApiTest
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Default", action = "Index", id = UrlParameter.Optional }
             );
-        
+
+            routes.MapRoute("GamePage", 
+                   "{controller}/{action}/{id}",
+                   new
+                   {
+                       controller = "GamePage",
+                       action = "GameProfile",
+                       id = ""
+                   }
+            );
+
         }
     }
 }
