@@ -11,9 +11,20 @@
         },
         success: function (data) {
             debugger;
-            $('#proJumbo').append('<img src=' + data.results.image.screen_url + '>');
+            $('#proPic').append('<img src=' + data.results.image.screen_url + '>');
             $('#gameName').html(data.results.name);
-            
+            $('#gameDesc').html(data.results.deck);
+            data.results.genres.forEach(function (genre) {
+                $('#gameGenre').append('<li>' + genre.name + '</li>')
+            });
+            data.results.platforms.forEach(function(platform ){
+                $('#gamePlatforms').append('<li>' + platform.name + '</li>')
+            });
+            $('#gameRelease').html(data.results.original_release_date);
+
+            data.results.similar_games.forEach(function (sim) {
+                $('#gameAlike').append('<li>'+ sim.name + '</li>')
+            })
         }
     })
 

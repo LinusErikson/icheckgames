@@ -4,3 +4,9 @@
 .eztd{
     vertical-align:middle;
 }
+.topRight{
+  position: absolute;
+    top: 120px;
+    right: 500px;
+
+}
