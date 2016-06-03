@@ -3,19 +3,144 @@
     ViewBag.Title = "Index";
 }
 
-<h1>friends</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-sm-4 col-xs-6">
+            <a href="#" class="thumbnail"> <img id="#imgOne" src="http://placehold.it/350x400" class="img-responsive"></a>
+            <div class="text-center">
+                <button type="button" class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></button>
+                <button type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
+                <button type="button" class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></button>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-4 col-xs-6">
+            <a href="#" class="thumbnail"> <img id="imgTwo" src="http://placehold.it/350x400" class="img-responsive"></a>
+            <div class="text-center">
+                <button type="button" class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></button>
+                <button type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
+                <button type="button" class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></button>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-4 col-xs-6">
+            <a href="#" class="thumbnail"> <img id="imgThree" src="http://placehold.it/350x400" class="img-responsive"></a>
+            <div class="text-center">
+                <button type="button" class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></button>
+                <button type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
+                <button class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></button>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-4 col-xs-6">
+            <a href="#" class="thumbnail"> <img id="imgFour" src="http://placehold.it/350x400" class="img-responsive"></a>
+            <div class="text-center">
+                <button type="button" class="label label-info"><span class="glyphicon glyphicon-info-sign"></span></button>
+                <button id="" type="button" data-toggle="modal" data-target="#modal-comments" class="label label-warning"><span class="glyphicon glyphicon-comment"></span></button>
+                <button type="button" class="label label-success"><span class="glyphicon glyphicon-plus-sign"></span></button>
+            </div>
+        </div>
+       
+        <hr>
+      
+       
 
-<div>asdasdasda</div>
-<div id="username"></div>
+       
 
 
-<ul id="recentlyGame"><strong>Recently played games:</strong></ul>
 
+       
+
+        <!-- Modal Comments -->
+        <div class="modal" id="modal-comments" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Comments</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="actionBox">
+                            <ul class="commentList">
+                                <li>
+                                    <div class="commenterImage">
+                                        <img src="http://lorempixel.com/50/50/people/6" />
+                                    </div>
+                                    <div class="commentText">
+                                        <p class="">Hello this is a test comment.</p>
+                                        <span class="date sub-text">on March 5th, 2014</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="commenterImage">
+                                        <img src="http://lorempixel.com/50/50/people/7" />
+                                    </div>
+                                    <div class="commentText">
+                                        <p class="">
+                                            Hello this is a test comment and this comment is particularly very long and it goes on and on and on.
+                                        </p>
+                                        <span class="date sub-text">on Dec 12th, 1984</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="commenterImage">
+                                        <img src="http://lorempixel.com/50/50/people/9" />
+                                    </div>
+                                    <div class="commentText">
+                                        <p class="">Hello this is a test comment.</p>
+                                        <span class="date sub-text">on Sep 11th, 2006</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="commenterImage">
+                                        <img src="http://lorempixel.com/50/50/people/3" />
+                                    </div>
+                                    <div class="commentText">
+                                        <p class="">hello world friends.</p>
+                                        <span class="date sub-text">on May 31th, 2016</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <form class="form-inline" role="form">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Your comments" />
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+<br />
+<br />
+<br />
 <br />
 
-<ul id="recentlyGame1"><strong>searchresults:</strong></ul>
+<form id="formen" class="container" role="search" method="get" action="/GamePage/Game"> 
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control"  name="search" placeholder="search">
+            <span class="input-group-btn">
+                <button class="btn btn-success" type="submit">
+                    <span class=" glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
 
-<ul id="bilder">
-   
-</ul>
 
+
+
+
+<script src="~/scripts/jquery-2.2.3.min.js"></script>
+<script src="~/scripts/search.js"></script>

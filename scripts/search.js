@@ -11,19 +11,16 @@
             },
             success: function (data) {
                 data.results.forEach(function (game) {
-                   
+                    debugger;
                     var url = "/gamepage/gameprofile/" + game.id;
                     $('#searchResults').append('<tr data-href='+url+' class=' + 'eztr><td class=' + 'eztd>' + game.name + '<img class=' + 'ezimg' + ' src=' + game.image.icon_url + '>' + '</td></tr>');
 
                     $('.eztr').click(function () {
                         window.location = $(this).data("href");
                     })
-
                 })
-              
             }
         })
-       
 });
 
 
