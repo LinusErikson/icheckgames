@@ -7,6 +7,8 @@ using System.Data.Entity;
 using SteamApiTest.Models;
 using System.Linq;
 using System.Data.Entity;
+using System.Net;
+using System.IO;
 
 namespace SteamApiTest.Controllers
 {
@@ -14,14 +16,31 @@ namespace SteamApiTest.Controllers
     {
         // GET: User
 
-      
 
-      
-
-        public ActionResult Index()
+       
+       public ActionResult Users()
         {
+
+         
+            return View();
+        }
+
+        public ActionResult UserInfo()
+        {
+            string name = Session["UserName"].ToString();
+            iCheckContext context = new iCheckContext();
+            var uInfo = from x in context.Users
+                        where x.Username == name
+                        select x.FirstName+x.LastName;
+
+            return Json(uInfo, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult UserProfile()
+        {
+
            
-            
+
             return View();
         }
 
@@ -39,7 +58,8 @@ namespace SteamApiTest.Controllers
             string password2 = Request["PasswordCheck"];
 
             iCheckContext context = new iCheckContext();
-            ViewBag.userTaken = "";
+            ViewBag.userTaken = null;
+            ViewBag.MissPaswword = null;
             foreach (User u in context.Users)
             {
                 if (iuName == u.Username || iuName == "")
@@ -53,7 +73,7 @@ namespace SteamApiTest.Controllers
                
             }
             DateTime convertDoB = Convert.ToDateTime(iDoB);
-            if (ViewBag.userTaken == "")
+            if (ViewBag.userTaken == null && ViewBag.MissPassword == null)
             {
                 context.Users.Add(new User {
                     Username = iuName,

@@ -38,9 +38,9 @@
                             @if ((bool)Session["IsLoggedIn"] == true)
                             {
                                 <li><button class="btn btn-danger btn-group-lg" type="submit" name="logoutButton">Logout</button></li>
-                                <li><a href="/User/Index">Profile</a></li>
+                                <li><a href="/User/UserProfile">Profile</a></li>
                             }
-
+                           
                         </ul>
                     </form>
                     <form id="formen" class="navbar-form navbar-right" role="search" method="get" action="/GamePage/Game">
@@ -156,7 +156,7 @@
 
                 <script src="~/Scripts/jquery-2.2.3.min.js"></script>
                 <script src="~/Scripts/bootstrap.min.js"></script>
-                <script src="~/Scripts/steam.js"></script>
+                <script src="~/Scripts/UserProfile.js"></script>
 
 </body>
 </html>

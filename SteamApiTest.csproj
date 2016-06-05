@@ -178,7 +178,7 @@
     <Content Include="scripts\jquery-2.2.3.js" />
     <Content Include="scripts\jquery-2.2.3.min.js" />
     <Content Include="scripts\search.js" />
-    <Content Include="scripts\steam.js" />
+    <Content Include="scripts\UserProfile.js" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
@@ -225,7 +225,7 @@
     <Content Include="scripts\jquery-2.2.3.min.map" />
     <Content Include="Views\GamePage\Game.cshtml" />
     <Content Include="Views\GamePage\GameProfile.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\UserProfile.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <None Include="Web.Debug.config">

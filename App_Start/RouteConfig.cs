@@ -28,6 +28,11 @@ namespace SteamApiTest
                        id = ""
                    }
             );
+            routes.MapRoute(
+              name: "User",
+              url: "{Controller}/{action}/{username}",
+              defaults: new { controller = "User", action = "UserProfile", username = "" }
+          );
 
         }
     }
