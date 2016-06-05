@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/ezcss.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+                <input type="hidden" id="myValue" value="@ViewBag.sq" />
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li data-toggle="modal" data-target="#test"><a href="#">Login</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form id="formen" class="navbar-form navbar-right" role="search" method="get" action="/GamePage/Game">
+                        <div class="form-group">
+                            <input id="searchField" name="search" type="text" class="form-control" placeholder="search">
+                        </div>
+                        <button id="searchButton" type="submit" class="btn btn-default">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+
+
+    <div class="modal fade test" id="test">
+
+        <div class="modal-dialog modal-sm">
+
+
+            <div class="container">
+                <div class="row">
+
+                    <form>
+                        <div class="col-md-4">
+                            <div class="panel panel-info">
+
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Login</h3>
+                                </div>
+
+                                <div class="list-group-item"><input class="form-control" id="" type="text" placeholder="username" required=""></div>
+                                <div class="list-group-item"><input class="form-control" id="" type="password" placeholder="password" required=""></div>
+
+                                <nav>
+                                    <ul class="list-group-item text-center">
+                                        <button id="" class="btn btn-primary btn-sm" type="reset">Back</button>
+                                        <button id="" class="btn btn-success btn-sm" type="submit">Next</button>
+                                    </ul>
+                                </nav>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/steam.js"></script> 
+   
+</body>
+</html>
