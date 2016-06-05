@@ -17,6 +17,8 @@ namespace SteamApiTest
 
         protected void Session_Start(Object sender, EventArgs e)
         {
+            Session["IsLoggedIn"] = false;
+            Session["UserName"] = "";
             
         }
 

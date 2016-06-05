@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Data.Entity;
+using SteamApiTest.Models;
 
 namespace SteamApiTest.Controllers
 {
@@ -14,6 +15,14 @@ namespace SteamApiTest.Controllers
         {
             var searchValue = Request.QueryString["search"];
             ViewBag.sq = searchValue;
+
+            using (iCheckContext context = new iCheckContext())
+            {
+                int count = context.Users.Count();
+                ViewBag.numUsers = count;
+            }
+
+
             return View();
         }
 

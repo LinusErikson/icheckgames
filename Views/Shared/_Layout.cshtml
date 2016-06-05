@@ -28,22 +28,21 @@
                 </div>
                 <input type="hidden" id="myValue" value="@ViewBag.sq" />
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                        <li data-toggle="modal" data-target="#test"><a href="#">Login</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <form action="@Url.Action("Logout", "User")" method="post">
+                        <ul class="nav navbar-nav" role="button">
+                            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                            @if ((bool)Session["IsLoggedIn"] == false)
+                            {
+                                <li><button data-toggle="modal" data-target="#Login" type="button" class="btn btn-success btn-group-lg">Login</button></li>
+                            }
+                            @if ((bool)Session["IsLoggedIn"] == true)
+                            {
+                                <li><button class="btn btn-danger btn-group-lg" type="submit" name="logoutButton">Logout</button></li>
+                                <li><a href="/User/Index">Profile</a></li>
+                            }
+
+                        </ul>
+                    </form>
                     <form id="formen" class="navbar-form navbar-right" role="search" method="get" action="/GamePage/Game">
                         <div class="form-group">
                             <input id="searchField" name="search" type="text" class="form-control" placeholder="search">
@@ -56,59 +55,108 @@
         </nav>
     </div>
 
+    
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-
-
-    <div class="modal fade test" id="test">
-
-        <div class="modal-dialog modal-sm">
+                <div class="container body-content">
+                    @RenderBody()
+                    <hr />
+                    <footer>
+                        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                    </footer>
+                </div>
 
 
-            <div class="container">
-                <div class="row">
 
-                    <form>
-                        <div class="col-md-4">
-                            <div class="panel panel-info">
 
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Login</h3>
-                                </div>
 
-                                <div class="list-group-item"><input class="form-control" id="" type="text" placeholder="username" required=""></div>
-                                <div class="list-group-item"><input class="form-control" id="" type="password" placeholder="password" required=""></div>
+                <div class="modal fade test" id="Login">
 
-                                <nav>
-                                    <ul class="list-group-item text-center">
-                                        <button id="" class="btn btn-primary btn-sm" type="reset">Back</button>
-                                        <button id="" class="btn btn-success btn-sm" type="submit">Next</button>
-                                    </ul>
-                                </nav>
+                    <div class="modal-dialog modal-sm">
 
+
+                        <div class="container">
+                            <div class="row">
+
+                                <form method="post" action="@Url.Action("Login", "User")">
+                                    <div class="col-md-4">
+                                        <div class="panel panel-info">
+
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Login</h3>
+                                            </div>
+
+                                            <div class="list-group-item"><input class="form-control" name="LoginUserName" type="text" placeholder="username" required=""></div>
+                                            <div class="list-group-item"><input class="form-control" name="LoginPassword" type="password" placeholder="password" required=""></div>
+
+                                            <nav>
+                                                <ul class="list-group-item text-center">
+                                                    <button id="" class="btn btn-primary btn-sm" type="reset">Back</button>
+                                                    <button id="" class="btn btn-success btn-sm" type="submit">Next</button>
+                                                    <button type="button" data-toggle="modal" data-target="#Register" id="" class="btn btn-danger btn-sm">Register</button>
+                                                </ul>
+                                            </nav>
+
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+
+
+                <div class="modal fade test" id="Register">
+
+                    <div class="modal-dialog modal-sm">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4">
+                                    <h4 class="text-center">Register Account</h4>
+                                    <hr>
+                                    <form method="post" action="@Url.Action("Register", "User")">
+                                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                                            <div class="panel panel-info">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">Register</h3>
+                                                </div>
+                                                <div class="list-group-item">Username:   <input name="UserName" class="form-control input-sm" type="text" required=""></div>
+                                                <div class="list-group-item">Email:      <input name="Email" class="form-control input-sm" type="text" required=""></div>
+                                                <div class="list-group-item">First name: <input name="FName" class="form-control input-sm" type="text" required=""></div>
+                                                <div class="list-group-item">Last name:  <input name="LName" class="form-control input-sm" type="text" required=""></div>
+                                                <div class="list-group-item">Birthday:   <input name="DoB" class="form-control input-sm" type="date" required=""></div>
+                                                <div class="list-group-item">Country:   <input name="Country" class="form-control input-sm" type="text" required=""></div>
+                                                <div class="list-group-item">Steam64 ID:   <input name="Steam64" class="form-control input-sm" type="text"></div>
+                                                <div class="list-group-item">
+                                                    Password:   <input name="Password" class="form-control input-sm" type="password" required="true">
+                                                    Confirm password:
+                                                    <input name="PasswordCheck" class="form-control input-sm" type="password" required="true">
+                                                </div>
+                                            </div>
+                                            <nav>
+                                                <ul class="pager">
+                                                    <a href=""><button class="btn btn-primary btn-sm" type="reset">Back</button></a>
+                                                    <a href=""><button class="btn btn-default btn-sm" type="submit">Next</button></a>
+                                                </ul>
+                                                <p>@ViewBag.userTaken</p>
+                                                <p>@ViewBag.MissPassword</p>
+                                            </nav>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-4"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
 
 
+                <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+                <script src="~/Scripts/bootstrap.min.js"></script>
+                <script src="~/Scripts/steam.js"></script>
 
-
-
-    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/steam.js"></script> 
-   
 </body>
 </html>
