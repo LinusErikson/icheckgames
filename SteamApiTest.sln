@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
+<<<<<<< HEAD
 VisualStudioVersion = 14.0.25123.0
+=======
+VisualStudioVersion = 14.0.23107.0
+>>>>>>> jimmyDev
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamApiTest", "SteamApiTest.csproj", "{77876B55-75D1-4E82-BD66-611DEA291C5B}"
 EndProject
