@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿var gid;
+$(document).ready(function () {
     $.ajax({
         type: 'GET',
         dataType: 'jsonp',
@@ -11,7 +12,7 @@
         },
         success: function (data) {
             debugger;
-            $('#proPic').append('<img src=' + data.results.image.screen_url + '>');
+            $('#proPic').append('<img src=' + data.results.image.super_url + '>');
             $('#gameName').html(data.results.name);
             $('#gameDesc').html(data.results.deck);
             data.results.genres.forEach(function (genre) {
@@ -25,11 +26,14 @@
             data.results.similar_games.forEach(function (sim) {
                 $('#gameAlike').append('<li>'+ sim.name + '</li>')
             })
+            gid = data.results.id;
         }
     })
 
     
-    
+    $('#checkButton').click(function () {
+        $('#checkButton').attr("value", gid)
+    })
 
     
 });

@@ -17,7 +17,7 @@ namespace SteamApiTest.Models
         public string Country { get; set; }
         public DateTime DoB { get; set; }
         public string Steam64 { get; set; }
-        public virtual IList<Game> GamesChecked { get; set; }
+        public virtual Game GamesChecked { get; set; }
         public virtual IList<GameList> GameList { get; set; }
     }
 }

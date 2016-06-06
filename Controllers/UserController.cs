@@ -33,6 +33,7 @@ namespace SteamApiTest.Controllers
         public ActionResult UserProfile(string username)
         {
             iCheckContext context = new iCheckContext();
+
             var uInfo = from x in context.Users
                         where x.Username == username
                         select x;
@@ -44,10 +45,8 @@ namespace SteamApiTest.Controllers
             {
                 TempData["Steam64"] = s64;
             }
-
            
             ViewBag.user = uInfo;
-            
 
             return View();
         }

@@ -81,6 +81,15 @@ namespace SteamApiTest
 
                }
         );
+            routes.MapRoute("Check",
+            "Check/Index/",
+            new
+            {
+                controller = "Check",
+                action = "Index",
+
+            }
+     );
 
         }
     }
