@@ -8,7 +8,6 @@ namespace SteamApiTest.Models
     public class Game
     {
         public int Id { get; set; }
-
         public int GBEyeD { get; set; }
         public int NumOfChecks { get; set; }
         public string Name { get; set; }
