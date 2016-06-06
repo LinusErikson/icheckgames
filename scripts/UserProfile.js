@@ -31,8 +31,7 @@ $(document).ready(function () {
             success: function (data) {
                // data = JSON.parse(data);
                 debugger;
-                    $('#realName').html(data[0])
-               
+                    $('#realName').html(data[0])  
             }
         });
        
