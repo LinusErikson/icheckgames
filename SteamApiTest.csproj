@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Json.NET.Web, Version=1.0.49.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Json.NET.Web.1.0.49\lib\portable45-net45+win8+wpa81\Json.NET.Web.dll</HintPath>
       <Private>True</Private>
@@ -170,7 +178,7 @@
     <Content Include="scripts\jquery-2.2.3.js" />
     <Content Include="scripts\jquery-2.2.3.min.js" />
     <Content Include="scripts\search.js" />
-    <Content Include="scripts\steam.js" />
+    <Content Include="scripts\UserProfile.js" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
@@ -186,6 +194,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606051418277_InitialCreate.cs" />
+    <Compile Include="Migrations\201606051418277_InitialCreate.Designer.cs">
+      <DependentUpon>201606051418277_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606051452371_yo.cs" />
+    <Compile Include="Migrations\201606051452371_yo.Designer.cs">
+      <DependentUpon>201606051452371_yo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606051456532_username.cs" />
+    <Compile Include="Migrations\201606051456532_username.Designer.cs">
+      <DependentUpon>201606051456532_username.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\GameList.cs" />
+    <Compile Include="Models\iCheckContext.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,7 +225,9 @@
     <Content Include="scripts\jquery-2.2.3.min.map" />
     <Content Include="Views\GamePage\Game.cshtml" />
     <Content Include="Views\GamePage\GameProfile.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\UserProfile.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -210,7 +237,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606051418277_InitialCreate.resx">
+      <DependentUpon>201606051418277_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606051452371_yo.resx">
+      <DependentUpon>201606051452371_yo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606051456532_username.resx">
+      <DependentUpon>201606051456532_username.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
