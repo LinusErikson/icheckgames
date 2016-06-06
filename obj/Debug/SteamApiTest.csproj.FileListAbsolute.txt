@@ -24,6 +24,8 @@ C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\M
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AI.Web.dll
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AI.WindowsServer.dll
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Newtonsoft.Json.dll
@@ -43,6 +45,8 @@ C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\M
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AI.Web.xml
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Newtonsoft.Json.xml
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\System.Net.Http.Formatting.xml
@@ -60,8 +64,3 @@ C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\obj\D
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\obj\Debug\SteamApiTest.csproj.GenerateResource.Cache
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\obj\Debug\SteamApiTest.dll
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\obj\Debug\SteamApiTest.pdb
-C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\obj\Debug\SteamApiTest.csprojResolveAssemblyReference.cache
-C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\bin\Microsoft.AspNet.Identity.EntityFramework.xml

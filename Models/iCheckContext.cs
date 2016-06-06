@@ -8,7 +8,7 @@ namespace SteamApiTest.Models
 {
     public class iCheckContext : DbContext
     {
-        public iCheckContext(): base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ICheckGames;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+        public iCheckContext(): base()
         {
 
         }
