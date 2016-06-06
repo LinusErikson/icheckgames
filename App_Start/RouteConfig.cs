@@ -72,6 +72,15 @@ namespace SteamApiTest
                     
                 }
          );
+            routes.MapRoute("SteamGames",
+               "Default/getRecentGame/",
+               new
+               {
+                   controller = "Default",
+                   action = "getRecentGame",
+
+               }
+        );
 
         }
     }

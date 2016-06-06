@@ -1,15 +1,15 @@
 ﻿
 $(document).ready(function () {
     
-        $.ajax({
-            type: 'GET',
-            url: "/Default/getPlayerInfo",
-            dataType: 'json',
-            success: function (fList) {
-                fList = JSON.parse(fList);
-                $('#username').text(fList.response.players[0].personaname)
-            }
-        });
+        //$.ajax({
+        //    type: 'GET',
+        //    url: "/Default/getPlayerInfo",
+        //    dataType: 'json',
+        //    success: function (fList) {
+        //        fList = JSON.parse(fList);
+        //        $('#username').text(fList.response.players[0].personaname)
+        //    }
+        //});
 
         $.ajax({
             type: 'GET',
@@ -18,22 +18,13 @@ $(document).ready(function () {
             success: function (data) {
                 data = JSON.parse(data);
                 data.response.games.forEach(function (game) {
-                    $('#recentlyGame').append('<li>' + game.name + '</li>')
+                    debugger;
+                    $('#recentlyGame').append('<li class="list-group-item">' + game.name + '</li>')
                 })
             }
         });
 
 
-        $.ajax({
-            type: 'GET',
-            url: "/User/UserInfo",
-            dataType: 'json',
-            success: function (data) {
-               // data = JSON.parse(data);
-                debugger;
-                    $('#realName').html(data[0])  
-            }
-        });
        
 });
 

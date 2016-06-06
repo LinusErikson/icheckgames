@@ -64,3 +64,4 @@ C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\obj\D
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\obj\Debug\SteamApiTest.csproj.GenerateResource.Cache
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\obj\Debug\SteamApiTest.dll
 C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\obj\Debug\SteamApiTest.pdb
+C:\Users\Linus\Documents\Visual Studio 2015\Projects\icheckgames\LinusDev1\obj\Debug\SteamApiTest.csprojResolveAssemblyReference.cache

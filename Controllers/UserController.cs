@@ -37,8 +37,18 @@ namespace SteamApiTest.Controllers
                         where x.Username == username
                         select x;
 
+            var steam64 = from x in context.Users
+                          where x.Username == username
+                          select x.Steam64;
+            foreach (var s64 in steam64)
+            {
+                TempData["Steam64"] = s64;
+            }
+
+           
             ViewBag.user = uInfo;
             
+
             return View();
         }
 
