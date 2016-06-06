@@ -159,3 +159,4 @@ C:\Users\Jimmy\Source\Repos\icheckgames\bin\System.Web.Mvc.xml
 C:\Users\Jimmy\Source\Repos\icheckgames\obj\Debug\SteamApiTest.csprojResolveAssemblyReference.cache
 C:\Users\Jimmy\Source\Repos\icheckgames\obj\Debug\SteamApiTest.dll
 C:\Users\Jimmy\Source\Repos\icheckgames\obj\Debug\SteamApiTest.pdb
+C:\Users\Jimmy\Source\Repos\icheckgames\bin\Newtonsoft.Json.xml
