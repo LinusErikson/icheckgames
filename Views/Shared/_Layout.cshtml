@@ -33,7 +33,8 @@
                             <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                             @if ((bool)Session["IsLoggedIn"] == false)
                             {
-                                <li><button data-toggle="modal" data-target="#Login" type="button" class="btn btn-success btn-group-lg">Login</button></li>
+                                //<li><button data-toggle="modal" data-target="#Login" type="button" class="btn btn-success btn-group-lg">Login</button></li>
+                                <li class=""><a href="#" data-target="#Login" data-toggle="modal">Login <span class=""></span></a></li>
                             }
                             @if ((bool)Session["IsLoggedIn"] == true)
                             {
@@ -90,7 +91,7 @@
 
                                             <nav>
                                                 <ul class="list-group-item text-center">
-                                                    <button id="" class="btn btn-primary btn-sm" type="reset">Back</button>
+                                                    <button data-toggle="modal" data-target="#Login" id="" class="btn btn-primary btn-sm" type="reset">Back</button>
                                                     <button id="" class="btn btn-success btn-sm" type="submit">Next</button>
                                                     <button type="button" data-toggle="modal" data-target="#Register" id="" class="btn btn-danger btn-sm">Register</button>
                                                 </ul>
@@ -136,7 +137,7 @@
                                             </div>
                                             <nav>
                                                 <ul class="pager">
-                                                    <a href=""><button class="btn btn-primary btn-sm" type="reset">Back</button></a>
+                                                    <a href=""><button data-toggle="modal" data-target="#Register" class="btn btn-primary btn-sm" type="reset">Back</button></a>
                                                     <a href=""><button class="btn btn-default btn-sm" type="submit">Next</button></a>
                                                 </ul>
                                                 <p>@ViewBag.userTaken</p>
