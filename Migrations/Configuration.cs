@@ -9,8 +9,7 @@ namespace SteamApiTest.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "SteamApiTest.Models.iCheckContext";
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(SteamApiTest.Models.iCheckContext context)

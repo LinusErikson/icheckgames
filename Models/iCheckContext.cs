@@ -8,29 +8,31 @@ namespace SteamApiTest.Models
 {
     public class iCheckContext : DbContext
     {
-        public iCheckContext(): base(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = ICheckGames; MultipleActiveResultSets=true; Integrated Security = True; Connect Timeout = 15; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+        public iCheckContext(): base("ICheckDB")
         {
 
         }
         public DbSet<Game> Games { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<GameList> GameLists { get; set; }
-
+        //MultipleActiveResultSets=true;
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<GameList>()
-                 .HasRequired(u => u.ListOwner)
-                 .WithMany(u => u.GameList);
 
             modelBuilder.Entity<Game>()
-                .HasOptional(g => g.CheckedByUser);
-     
+                .HasMany(u => u.UserCheck)
+                .WithMany(g => g.GamesChecked);
+
+            modelBuilder.Entity<Game>()
+                .HasMany(g => g.gameListed)
+                .WithMany(g => g.GamesInList);
+
             modelBuilder.Entity<User>()
-                .HasOptional(u => u.GamesChecked)
-                .WithMany(u => u.CheckedByUser);
-                
-                
-                
+                .HasMany(g => g.GameList)
+                .WithRequired(u => u.ListOwner);
+
+
+
         }
 
     }

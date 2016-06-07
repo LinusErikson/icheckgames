@@ -1,4 +1,5 @@
 ﻿var gid;
+var gName;
 $(document).ready(function () {
     $.ajax({
         type: 'GET',
@@ -27,12 +28,13 @@ $(document).ready(function () {
                 $('#gameAlike').append('<li>'+ sim.name + '</li>')
             })
             gid = data.results.id;
+            gName = data.results.name;
         }
     })
 
     
     $('#checkButton').click(function () {
-        $('#checkButton').attr("value", gid)
+        $('#checkButton').attr("value", gName+'/' + gid)
     })
 
     

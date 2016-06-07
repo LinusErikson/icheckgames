@@ -38,6 +38,10 @@ namespace SteamApiTest.Controllers
                         where x.Username == username
                         select x;
 
+            var gc = (from x in context.Users
+                        where x.Username == username
+                        select x).Single();
+
             var steam64 = from x in context.Users
                           where x.Username == username
                           select x.Steam64;
@@ -47,6 +51,13 @@ namespace SteamApiTest.Controllers
             }
            
             ViewBag.user = uInfo;
+
+
+            User u = gc;
+            ViewBag.gc = u.GamesChecked.Count();
+
+
+
 
             return View();
         }

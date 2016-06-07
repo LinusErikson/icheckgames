@@ -203,25 +203,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606051418277_InitialCreate.cs" />
-    <Compile Include="Migrations\201606051418277_InitialCreate.Designer.cs">
-      <DependentUpon>201606051418277_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606051452371_yo.cs" />
-    <Compile Include="Migrations\201606051452371_yo.Designer.cs">
-      <DependentUpon>201606051452371_yo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606051456532_username.cs" />
-    <Compile Include="Migrations\201606051456532_username.Designer.cs">
-      <DependentUpon>201606051456532_username.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606062034199_hello.cs" />
-    <Compile Include="Migrations\201606062034199_hello.Designer.cs">
-      <DependentUpon>201606062034199_hello.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606062049057_hello1.cs" />
-    <Compile Include="Migrations\201606062049057_hello1.Designer.cs">
-      <DependentUpon>201606062049057_hello1.cs</DependentUpon>
+    <Compile Include="Migrations\201606071213478_hello1.cs" />
+    <Compile Include="Migrations\201606071213478_hello1.Designer.cs">
+      <DependentUpon>201606071213478_hello1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Game.cs" />
@@ -257,20 +241,8 @@
     <Folder Include="Views\Check\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606051418277_InitialCreate.resx">
-      <DependentUpon>201606051418277_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606051452371_yo.resx">
-      <DependentUpon>201606051452371_yo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606051456532_username.resx">
-      <DependentUpon>201606051456532_username.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606062034199_hello.resx">
-      <DependentUpon>201606062034199_hello.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606062049057_hello1.resx">
-      <DependentUpon>201606062049057_hello1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606071213478_hello1.resx">
+      <DependentUpon>201606071213478_hello1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
