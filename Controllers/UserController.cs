@@ -51,13 +51,9 @@ namespace SteamApiTest.Controllers
             }
            
             ViewBag.user = uInfo;
-
-
+            ViewBag.whoami = username;
             User u = gc;
             ViewBag.gc = u.GamesChecked.Count();
-
-
-
 
             return View();
         }
@@ -106,6 +102,7 @@ namespace SteamApiTest.Controllers
                 context.SaveChanges();
                 Session["IsLoggedIn"] = true;
                 Session["UserName"] = iuName;
+                Session["CurrentUser"] = Session["UserName"];
             }
 
 
@@ -126,7 +123,7 @@ namespace SteamApiTest.Controllers
                     {
                         Session["IsLoggedIn"] = true;
                         Session["UserName"] = uName;
-                     
+                        Session["CurrentUser"] = Session["UserName"];
                     }
                 }
             }
@@ -140,6 +137,7 @@ namespace SteamApiTest.Controllers
             {
                 Session["IsLoggedIn"] = false;
                 Session["UserName"] = "";
+                Session["CurrentUser"] = "";
             }
             return Redirect("/");
         }

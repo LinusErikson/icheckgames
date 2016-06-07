@@ -18,7 +18,8 @@
                 <p id="userEmail"><span class="glyphicon glyphicon-envelope"></span> @user.Email</p>
                 <p id="userAge"><span class="glyphicon glyphicon-calendar"></span> @user.DoB</p>
             }
-            <span>Games Checked: @ViewBag.gc </span><br /><a><span id="nrGamesPlayed">0</span></a>
+            <span class="glyphicon glyphicon-check text-success"></span><a href="#"> Games finished</a>
+            <span class="badge">@ViewBag.gc</span>
         </div>
 
         <div class="col-lg-3 col-sm-4 col-xs-6">
@@ -51,14 +52,15 @@
                                 <tr>
                                     <td>
                                         <span class="glyphicon glyphicon-check text-success"></span><a href="#"> Games finished</a>
-                                        <span class="badge">0</span>
+                                        <span class="badge">@ViewBag.gc</span>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
-
+                @if ((bool)Session["IsLoggedIn"] && Session["CurrentUser"].ToString() == ViewBag.whoami)
+                {
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -96,6 +98,7 @@
                         </div>
                     </div>
                 </div>
+                }
             </div>
         </div>
     </div>

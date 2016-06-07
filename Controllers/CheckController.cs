@@ -14,8 +14,8 @@ namespace SteamApiTest.Controllers
         {
             string currUser = Session["UserName"].ToString();
             string gamechecked = Request["checkBTN"];
-            string[] split = gamechecked.Split('/');
-            var gameID = split.Last();
+                string[] split = gamechecked.Split('/');
+                var gameID = split.Last();
             var gameName = split.First();
 
             iCheckContext context = new iCheckContext();
