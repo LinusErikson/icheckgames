@@ -34,16 +34,23 @@ namespace SteamApiTest.Controllers
             string[] split = Request.Url.ToString().Split('/');
             var gid = split.Last();
 
-            
-         
-            var checks4thisGame = (from x in context.Games
-                                  where x.GBID == gid
-                                  select x).Single();
+            try
+            {
+                var checks4thisGame = (from x in context.Games
+                                       where x.GBID == gid
+                                       select x).Single();
+                Game g = checks4thisGame;
 
-            Game g = checks4thisGame;
-      
-        
-            ViewBag.gg = g.UserCheck.Count(); 
+
+                ViewBag.gg = g.UserCheck.Count();
+            }
+            catch (Exception)
+            {
+
+                return View();
+            }
+         
+         
 
             return View();
         }
