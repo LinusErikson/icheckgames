@@ -9,6 +9,8 @@ using System.Linq;
 using System.Data.Entity;
 using System.Net;
 using System.IO;
+using Microsoft.AspNet.Identity;
+using System.Threading.Tasks;
 
 namespace SteamApiTest.Controllers
 {
@@ -18,28 +20,33 @@ namespace SteamApiTest.Controllers
 
 
        
-       public ActionResult Users()
-        {
 
-         
-            return View();
-        }
-
+        
         public ActionResult UserInfo()
         {
-            string name = Session["UserName"].ToString();
-            iCheckContext context = new iCheckContext();
-            var uInfo = from x in context.Users
-                        where x.Username == name
-                        select x.FirstName+x.LastName;
-
-            return Json(uInfo, JsonRequestBehavior.AllowGet);
+            
+           return Json( JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult UserProfile()
-        {
+  
 
+        public ActionResult UserProfile(string username)
+        {
+            iCheckContext context = new iCheckContext();
+
+            var uInfo = from x in context.Users
+                        where x.Username == username
+                        select x;
+
+            var steam64 = from x in context.Users
+                          where x.Username == username
+                          select x.Steam64;
+            foreach (var s64 in steam64)
+            {
+                TempData["Steam64"] = s64;
+            }
            
+            ViewBag.user = uInfo;
 
             return View();
         }
@@ -108,6 +115,7 @@ namespace SteamApiTest.Controllers
                     {
                         Session["IsLoggedIn"] = true;
                         Session["UserName"] = uName;
+                     
                     }
                 }
             }

@@ -8,7 +8,7 @@ namespace SteamApiTest.Models
 {
     public class iCheckContext : DbContext
     {
-        public iCheckContext(): base()
+        public iCheckContext(): base(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = ICheckGames; MultipleActiveResultSets=true; Integrated Security = True; Connect Timeout = 15; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
         {
 
         }
@@ -24,8 +24,12 @@ namespace SteamApiTest.Models
 
             modelBuilder.Entity<Game>()
                 .HasOptional(g => g.CheckedByUser);
+     
+            modelBuilder.Entity<User>()
+                .HasOptional(u => u.GamesChecked)
+                .WithMany(u => u.CheckedByUser);
                 
-
+                
                 
         }
 

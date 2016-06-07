@@ -20,7 +20,12 @@
 
 
             <div id="proPic">
-
+                @if ((bool)Session["IsLoggedIn"])
+                {<form method="post" action="@Url.Action("Index", "Check")">
+                    <button type="submit" name="checkBTN" id="checkButton" class="btn btn-default">Check</button>
+                </form>
+                }
+               
             </div>
         </div>
             <br />

@@ -22,37 +22,31 @@ namespace SteamApiTest.Controllers
 
         public ActionResult getPlayerInfo()
         {
-            WebRequest request = WebRequest.Create("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=01A694C1280C995EE53475E509B80E79&steamids=76561197985361431");
 
-            Stream dataStream = request.GetResponse().GetResponseStream();
-            //// Open the stream using a StreamReader for easy access.
-            StreamReader reader = new StreamReader(dataStream);
-            //// Read the content.
-            string responseFromServer = reader.ReadToEnd();
+            //WebRequest request = WebRequest.Create("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=01A694C1280C995EE53475E509B80E79&steamids="+ ViewBag.userSteam64);
 
-            //string replacement = Regex.Replace(responseFromServer, @"\t|\n|\r", "");
+            //Stream dataStream = request.GetResponse().GetResponseStream();
+            //StreamReader reader = new StreamReader(dataStream);
 
+            //string responseFromServer = reader.ReadToEnd();
 
-            return Json(responseFromServer, JsonRequestBehavior.AllowGet);
-
+            //return Json(responseFromServer, JsonRequestBehavior.AllowGet);
+            return View();
         }
         
 
         public ActionResult getRecentGame()
         {
-            WebRequest request = WebRequest.Create("http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=01A694C1280C995EE53475E509B80E79&steamid=76561197985361431&format=json");
+           
+                    WebRequest request = WebRequest.Create("http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=01A694C1280C995EE53475E509B80E79&steamid=" + TempData["Steam64"] + "&format=json");
 
-            Stream dataStream = request.GetResponse().GetResponseStream();
-            //// Open the stream using a StreamReader for easy access.
-            StreamReader reader = new StreamReader(dataStream);
-            //// Read the content.
-            string responseFromServer = reader.ReadToEnd();
+                    Stream dataStream = request.GetResponse().GetResponseStream();
+                    StreamReader reader = new StreamReader(dataStream);
+                    string responseFromServer = reader.ReadToEnd();
 
-            //string replacement = Regex.Replace(responseFromServer, @"\t|\n|\r", "");
-
-
-            return Json(responseFromServer, JsonRequestBehavior.AllowGet);
-
+                    return Json(responseFromServer, JsonRequestBehavior.AllowGet);
+   
+          
         }
 
         public ActionResult getGameInfo()   

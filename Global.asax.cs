@@ -19,6 +19,7 @@ namespace SteamApiTest
         {
             Session["IsLoggedIn"] = false;
             Session["UserName"] = "";
+            Session["CurrentUser"] = "";
             
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SteamApiTest.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,13 +15,13 @@ namespace SteamApiTest
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Default", action = "Index", id = UrlParameter.Optional }
+                name: "Home",
+                url: "",
+                defaults: new { controller = "Default", action = "Index" }
             );
 
             routes.MapRoute("GamePage", 
-                   "{controller}/{action}/{id}",
+                   "GamePage/GameProfile/{id}",
                    new
                    {
                        controller = "GamePage",
@@ -28,11 +29,67 @@ namespace SteamApiTest
                        id = ""
                    }
             );
-            routes.MapRoute(
-              name: "User",
-              url: "{Controller}/{action}/{username}",
-              defaults: new { controller = "User", action = "UserProfile", username = "" }
+
+            routes.MapRoute("Profile",
+                "profile/{username}/",
+                new { controller = "User", action = "UserProfile" }
+                );
+
+            routes.MapRoute("GameSearch",
+                 "GameSearch/Game/{id}",
+                 new
+                 {
+                     controller = "GamePage",
+                     action = "Game",
+                     id = ""
+                 }
           );
+
+            routes.MapRoute("Login",
+                   "User/Login/",
+                   new
+                   {
+                       controller = "User",
+                       action = "Login",
+                       
+                   }
+            );
+            routes.MapRoute("Logout",
+                  "User/Logout/",
+                  new
+                  {
+                      controller = "User",
+                      action = "Logout",
+                      
+                  }
+           );
+            routes.MapRoute("Register",
+                "User/Register/",
+                new
+                {
+                    controller = "User",
+                    action = "Register",
+                    
+                }
+         );
+            routes.MapRoute("SteamGames",
+               "Default/getRecentGame/",
+               new
+               {
+                   controller = "Default",
+                   action = "getRecentGame",
+
+               }
+        );
+            routes.MapRoute("Check",
+            "Check/Index/",
+            new
+            {
+                controller = "Check",
+                action = "Index",
+
+            }
+     );
 
         }
     }
