@@ -34,11 +34,12 @@
                             @if ((bool)Session["IsLoggedIn"] == false)
                             {
                                 //<li><button data-toggle="modal" data-target="#Login" type="button" class="btn btn-success btn-group-lg">Login</button></li>
-                                <li class=""><a href="#" data-target="#Login" data-toggle="modal">Login <span class=""></span></a></li>
+                                <li class=""><a href="#" class="btn btn-success" data-target="#Login" data-toggle="modal">Login <span class=""></span></a></li>
+                                
                             }
                             @if ((bool)Session["IsLoggedIn"] == true)
                             {
-                                <li><button class="btn btn-danger btn-group-lg" type="submit" name="logoutButton">Logout</button></li>
+                                <li><button href="#" name="logoutButton" class="btn btn-danger btn-logout" type="submit">Logout</button></li>
                                 <li><a href="/Profile/@Session["UserName"]">Profile</a></li>
                             }
                            
