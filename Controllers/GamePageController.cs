@@ -40,8 +40,6 @@ namespace SteamApiTest.Controllers
                                        where x.GBID == gid
                                        select x).Single();
                 Game g = checks4thisGame;
-
-
                 ViewBag.gg = g.UserCheck.Count();
             }
             catch (Exception)
