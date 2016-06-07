@@ -20,7 +20,7 @@ namespace SteamApiTest
             Session["IsLoggedIn"] = false;
             Session["UserName"] = "";
             Session["CurrentUser"] = "";
-            
+            Session["GameChecked"] = false;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

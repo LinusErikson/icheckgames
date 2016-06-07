@@ -181,6 +181,7 @@
     <None Include="scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\FrontPagePics.js" />
     <Content Include="scripts\GameProfile.js" />
     <Content Include="scripts\hehe.css" />
     <Content Include="scripts\jquery-2.2.3.js" />

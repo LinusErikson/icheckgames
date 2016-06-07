@@ -53,7 +53,8 @@ namespace SteamApiTest.Controllers
                 {
                     u.GamesChecked.Add(addThisGame);
                 }
-
+               
+           
            
 
             context.SaveChanges();

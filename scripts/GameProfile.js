@@ -13,7 +13,7 @@ $(document).ready(function () {
         },
         success: function (data) {
             debugger;
-            $('#proPic').append('<img src=' + data.results.image.super_url + '>');
+            $('#proPic').attr('src', data.results.image.super_url);
             $('#gameName').html(data.results.name);
             $('#gameDesc').html(data.results.deck);
             data.results.genres.forEach(function (genre) {
@@ -23,9 +23,10 @@ $(document).ready(function () {
                 $('#gamePlatforms').append('<li>' + platform.name + '</li>')
             });
             $('#gameRelease').html(data.results.original_release_date);
-
+            
             data.results.similar_games.forEach(function (sim) {
-                $('#gameAlike').append('<li>'+ sim.name + '</li>')
+                $('#gameAlike').append('<li><a href=/gamepage/gameprofile/'+sim.id+'>' + sim.name + '</a></li>')
+             
             })
             gid = data.results.id;
             gName = data.results.name;

@@ -30,6 +30,7 @@ namespace SteamApiTest.Controllers
         public ActionResult GameProfile(string gameID)
         {
             iCheckContext context = new iCheckContext();
+            string currUser = Session["UserName"].ToString();
             TempData["CurrentUrl"] = Request.Url.ToString();
             string[] split = Request.Url.ToString().Split('/');
             var gid = split.Last();
@@ -40,8 +41,6 @@ namespace SteamApiTest.Controllers
                                        where x.GBID == gid
                                        select x).Single();
                 Game g = checks4thisGame;
-
-
                 ViewBag.gg = g.UserCheck.Count();
             }
             catch (Exception)
@@ -49,10 +48,27 @@ namespace SteamApiTest.Controllers
 
                 return View();
             }
-         
-         
 
-            return View();
+
+            var isGameChecked = (from x in context.Games
+                               where x.GBID == gid
+                               select x).Single();
+
+
+            var forThisUser = (from x in context.Users
+                              where x.Username == currUser
+                              select x).Single();
+
+
+            User u = forThisUser;
+            if (u.GamesChecked.Contains(isGameChecked))
+            {
+                Session["GameChecked"] = true;
+            }
+
+
+
+                return View();
         }
     }
 }

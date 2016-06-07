@@ -7,6 +7,7 @@ using System.Net;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using SteamApiTest.Models;
 
 namespace SteamApiTest.Controllers
 {
@@ -15,7 +16,24 @@ namespace SteamApiTest.Controllers
         // GET: Default
         public ActionResult Index()
         {
+            iCheckContext context = new iCheckContext();
 
+
+            var GamesWithChecks = (from x in context.Games
+                                   where x.UserCheck.Count() > 0
+                                   orderby x.UserCheck.Count descending
+                                   select x.GBID).Take(4);
+
+            List<string> wow = new List<string>();
+            wow.AddRange(GamesWithChecks);
+
+            ViewBag.g1 = wow[0];
+            ViewBag.g2 = wow[1];
+            ViewBag.g3 = wow[2];
+            ViewBag.g4 = wow[3];
+         
+        
+            
             return View();
        
         }
