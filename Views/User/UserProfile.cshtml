@@ -76,21 +76,21 @@
                                 <tr>
                                     <td>
                                         <span class="glyphicon glyphicon-cog text-info"></span><a href="#" class="">
-                                            Update Steam64 id
+                                          <span class="" data-toggle="modal" data-target="#updateSteam64" id="">Update Steam64</span>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <span class="glyphicon glyphicon-lock text-warning"></span><a href="#" class="">
-                                            Change Password
+                                            <span class="" data-toggle="modal" data-target="#updatePassword" id="">Change Password</span>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <span class="glyphicon glyphicon-trash text-danger"></span><a href="#" class="text-danger">
-                                            Delete Account
+                                        <span class="" data-toggle="modal" data-target="#deleteAccount" id="">Delete Account</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -105,3 +105,74 @@
 </div>
 <script src="~/scripts/jquery-2.2.3.min.js"></script>
 <script src="~/scripts/UserProfile.js"></script>
+
+
+
+
+
+<!-- MODAL - Update Steam64 -->
+<div class="modal fade" id="updateSteam64">
+    <div class="modal-dialog modal-sm">
+
+        <div class="container">
+            <div class="row">
+
+                <form method="post" action="@Url.Action("Login", "User")">
+                    <div class="col-lg-4 col-sm-4 col-xs-6">
+                        <div class="panel panel-info">
+                            <div class="list-group-item"><input class="form-control" name="steam64uid" type="text" placeholder="Steam64 ID"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL - Update Password -->
+<div class="modal fade" id="updatePassword">
+    <div class="modal-dialog modal-sm">
+
+        <div class="container">
+            <div class="row">
+
+                <form method="post" action="@Url.Action("Login", "User")">
+                    <div class="col-lg-4 col-sm-4 col-xs-6">
+                        <div class="panel panel-info">
+                            <div class="list-group-item"><input class="form-control" name="newPassRow1" type="text" placeholder="new password"></div>
+                            <div class="list-group-item"><input class="form-control" name="newPassRow2" type="text" placeholder="confirm password" required></div>
+                            <nav class="text-center">
+                                <button class="btn-sm btn-success" type="submit">ok</button>
+                            </nav>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL - Update Password -->
+<div class="modal fade" id="deleteAccount">
+    <div class="modal-dialog modal-sm">
+
+        <div class="container">
+            <div class="row">
+
+                <form method="post" action="@Url.Action("Login", "User")">
+                    <div class="col-lg-4 col-sm-4 col-xs-6">
+                        <div class="panel panel-info">
+                            <nav class="text-center">
+                                <p>Are you sure you want to remove your account from our database?</p>
+                                <button class="btn-sm btn-default" type="submit">cancel</button>
+                                <button class="btn-sm btn-warning" type="submit">delete</button>
+                            </nav>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+                         

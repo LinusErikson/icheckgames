@@ -24,13 +24,13 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="#">Brand</a>
+                    <a class="navbar-brand" href="#"></a>
                 </div>
                 <input type="hidden" id="myValue" value="@ViewBag.sq" />
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <form action="@Url.Action("Logout", "User")" method="post">
                         <ul class="nav navbar-nav" role="button">
-                            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="#">Users <span class="glyphicon glyphicon-user sr-only"></span></a></li>
                             @if ((bool)Session["IsLoggedIn"] == false)
                             {
                                 //<li><button data-toggle="modal" data-target="#Login" type="button" class="btn btn-success btn-group-lg">Login</button></li>
@@ -56,7 +56,7 @@
             </div>
         </nav>
     </div>
-
+    
     
 
                 <div class="container body-content">
@@ -153,7 +153,6 @@
 
                     </div>
                 </div>
-
 
 
                 <script src="~/Scripts/jquery-2.2.3.min.js"></script>
