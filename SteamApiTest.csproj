@@ -238,6 +238,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ErrorPages\" />
     <Folder Include="Views\Check\" />
   </ItemGroup>
   <ItemGroup>
