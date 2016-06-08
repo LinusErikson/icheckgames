@@ -89,7 +89,14 @@ namespace SteamApiTest
                 action = "Index",
 
             }
-     );
+        );
+
+            routes.MapRoute("UsersDB",
+               "UsersDB/",
+               new { controller = "User", action = "UsersDB" }
+               );
+
+          
 
         }
     }

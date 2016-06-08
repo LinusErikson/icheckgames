@@ -200,6 +200,7 @@
     <Compile Include="Controllers\CheckController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\GamePageController.cs" />
+    <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,6 +208,22 @@
     <Compile Include="Migrations\201606071213478_hello1.cs" />
     <Compile Include="Migrations\201606071213478_hello1.Designer.cs">
       <DependentUpon>201606071213478_hello1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606072332429_pics for users.cs" />
+    <Compile Include="Migrations\201606072332429_pics for users.Designer.cs">
+      <DependentUpon>201606072332429_pics for users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606072349347_pics for users1.cs" />
+    <Compile Include="Migrations\201606072349347_pics for users1.Designer.cs">
+      <DependentUpon>201606072349347_pics for users1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606072356305_pics for users2.cs" />
+    <Compile Include="Migrations\201606072356305_pics for users2.Designer.cs">
+      <DependentUpon>201606072356305_pics for users2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606080007318_pics for users3.cs" />
+    <Compile Include="Migrations\201606080007318_pics for users3.Designer.cs">
+      <DependentUpon>201606080007318_pics for users3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Game.cs" />
@@ -230,6 +247,7 @@
     <Content Include="Views\User\UserProfile.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\UsersDB.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -240,10 +258,23 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Check\" />
+    <Folder Include="Views\List\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606071213478_hello1.resx">
       <DependentUpon>201606071213478_hello1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606072332429_pics for users.resx">
+      <DependentUpon>201606072332429_pics for users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606072349347_pics for users1.resx">
+      <DependentUpon>201606072349347_pics for users1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606072356305_pics for users2.resx">
+      <DependentUpon>201606072356305_pics for users2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606080007318_pics for users3.resx">
+      <DependentUpon>201606080007318_pics for users3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -87,3 +87,6 @@
 #userNav{
     position:fixed;
 }
+.btn-logout {
+   height: 50px;
+}

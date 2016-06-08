@@ -31,10 +31,14 @@
                 <img id="proPic" class="img-responsive" />
                 <div class="list-group-item">
                     <div class="list-group-item-heading">
-                        @if ((bool)Session["IsLoggedIn"] && (bool)Session["GameChecked"])
+                        @if ((bool)Session["IsLoggedIn"])
                         {<form method="post" action="@Url.Action("Index", "Check")">
                             <button name="checkBTN" id="checkButton" class="btn btn-success" type="submit">
-                                <span class="glyphicon glyphicon-align-right glyphicon-check"></span>
+                                <span class="glyphicon glyphicon-check"></span>
+                        </form>
+                        <form  method="post" action="">
+                            <button name="listBTN" id="listButton" class="btn btn-success" type="button">
+                                <span class="glyphicon glyphicon-briefcase"></span>
                         </form>
                         }
                     </div>

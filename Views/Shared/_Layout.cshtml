@@ -24,20 +24,20 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="#">Brand</a>
+                    <a class="navbar-brand" href="/">Home</a>
                 </div>
                 <input type="hidden" id="myValue" value="@ViewBag.sq" />
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <form action="@Url.Action("Logout", "User")" method="post">
                         <ul class="nav navbar-nav" role="button">
-                            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                            <li class=""><a href="@Url.Action("UsersDB", "User")">Users <span class="sr-only"></span></a></li>
                             @if ((bool)Session["IsLoggedIn"] == false)
                             {
-                                <li><button data-toggle="modal" data-target="#Login" type="button" class="btn btn-success btn-group-lg">Login</button></li>
+                                <li class=""><a href="#" class="btn btn-success" data-target="#Login" data-toggle="modal">Login <span class=""></span></a></li>
                             }
                             @if ((bool)Session["IsLoggedIn"] == true)
                             {
-                                <li><button class="btn btn-danger btn-group-lg" type="submit" name="logoutButton">Logout</button></li>
+                                <li><button href="#" name="logoutButton" class="btn btn-danger btn-logout" type="submit">Logout</button></li>
                                 <li><a href="/Profile/@Session["UserName"]">Profile</a></li>
                             }
                            

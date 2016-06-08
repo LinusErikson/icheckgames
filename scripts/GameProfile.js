@@ -38,6 +38,10 @@ $(document).ready(function () {
         $('#checkButton').attr("value", gName+'/' + gid)
     })
 
+    $('#listButton').click(function () {
+        $('#listButton').attr("value", gName + '/' + gid)
+    })
+
     
 });
 

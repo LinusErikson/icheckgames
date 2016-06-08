@@ -63,3 +63,7 @@ C:\Users\Linuslol\Programmering\linusdev\icheckgames\obj\Debug\SteamApiTest.dll
 C:\Users\Linuslol\Programmering\linusdev\icheckgames\obj\Debug\SteamApiTest.pdb
 C:\Users\Linuslol\Programmering\linusdev\icheckgames\obj\Debug\SteamApiTest.Migrations.hello1.resources
 C:\Users\Linuslol\Programmering\linusdev\icheckgames\obj\Debug\SteamApiTest.csproj.GenerateResource.Cache
+C:\Users\Linuslol\Programmering\linusdev\icheckgames\obj\Debug\SteamApiTest.Migrations.picsforusers.resources
+C:\Users\Linuslol\Programmering\linusdev\icheckgames\obj\Debug\SteamApiTest.Migrations.picsforusers1.resources
+C:\Users\Linuslol\Programmering\linusdev\icheckgames\obj\Debug\SteamApiTest.Migrations.picsforusers2.resources
+C:\Users\Linuslol\Programmering\linusdev\icheckgames\obj\Debug\SteamApiTest.Migrations.picsforusers3.resources

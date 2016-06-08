@@ -55,6 +55,11 @@ namespace SteamApiTest.Controllers
             User u = gc;
             ViewBag.gc = u.GamesChecked.Count();
 
+            //var list = from x in context.GameLists
+            //           where x.ListOwner.Id == gc.Id
+            //           select x;
+            //ViewBag.list = list;
+
             return View();
         }
 
@@ -110,6 +115,49 @@ namespace SteamApiTest.Controllers
         }
         public ActionResult Login()
         {
+            string currUser = Session["UserName"].ToString();
+
+            string updsteam = Request["updSteam"];
+            if (updsteam != null)
+            {
+                string newSteam = Request["steam64uid"];
+                iCheckContext context1 = new iCheckContext();
+
+                var thisUser = (from x in context1.Users
+                                where x.Username == currUser
+                                select x).Single();
+                User u = thisUser;
+                u.Steam64 = newSteam;
+                context1.SaveChanges();
+                return Redirect("/");
+
+            }
+            
+
+
+
+            string updpwbutton = Request["updPWbtn"];
+           
+            if (updpwbutton != null)
+            {
+                string pw2 = Request["newPassRow1"];
+                string pw1 = Request["newPassRow2"];
+                
+                iCheckContext context2 = new iCheckContext();
+                if (pw1 == pw2)
+                {
+                    var thisUser = (from x in context2.Users
+                                    where x.Username == currUser
+                                    select x).Single();
+                    User u = thisUser;
+                    u.Password = pw1;
+                    context2.SaveChanges();
+                    return Redirect("/");
+                }
+            }
+
+
+
             string uName = Request["LoginUserName"];
             string password = Request["LoginPassword"];
 
@@ -141,6 +189,20 @@ namespace SteamApiTest.Controllers
             }
             return Redirect("/");
         }
+
+        public ActionResult UsersDB()
+        {
+            iCheckContext context = new iCheckContext();
+
+            var allUsers = from x in context.Users
+                           select x;
+
+            ViewBag.AllUsers = allUsers;
+
+            return View();
+        }
+
+       
     }
 
 }

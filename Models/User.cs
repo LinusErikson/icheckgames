@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
@@ -8,6 +9,7 @@ namespace SteamApiTest.Models
 {
     public class User
     {
+        
         public int Id { get; set; }
         public string Username { get; set; }
         public string FirstName { get; set; }
@@ -17,7 +19,13 @@ namespace SteamApiTest.Models
         public string Country { get; set; }
         public DateTime DoB { get; set; }
         public string Steam64 { get; set; }
+        public string PictureURL { get; set; }
         public virtual IList<Game> GamesChecked { get; set; }
         public virtual IList<GameList> GameList { get; set; }
+
+        public User()
+        {
+            PictureURL = "http://lorempixel.com/g/350/200/";
+        }
     }
 }

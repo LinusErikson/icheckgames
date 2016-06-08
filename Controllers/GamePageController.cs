@@ -50,23 +50,6 @@ namespace SteamApiTest.Controllers
             }
 
 
-            var isGameChecked = (from x in context.Games
-                               where x.GBID == gid
-                               select x).Single();
-
-
-            var forThisUser = (from x in context.Users
-                              where x.Username == currUser
-                              select x).Single();
-
-
-            User u = forThisUser;
-            if (u.GamesChecked.Contains(isGameChecked))
-            {
-                Session["GameChecked"] = true;
-            }
-
-
 
                 return View();
         }

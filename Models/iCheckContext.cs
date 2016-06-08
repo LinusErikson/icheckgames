@@ -31,6 +31,10 @@ namespace SteamApiTest.Models
                 .HasMany(g => g.GameList)
                 .WithRequired(u => u.ListOwner);
 
+           
+                
+
+
 
 
         }

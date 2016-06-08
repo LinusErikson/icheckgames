@@ -1,8 +1,12 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-lg-3 col-sm-4 col-xs-6">
-            <a href="#" class="thumbnail"> <img id="#avatar" src="http://lorempixel.com/image_output/people-q-c-640-480-9.jpg" class="img-responsive img-rounded"></a>
+        <div class="col-lg-4 col-sm-4 col-xs-6">
+            @foreach (var user in ViewBag.user)
+            {
+                <a href="#" class="thumbnail"> <img id="#avatar" src="@user.PictureURL" class="img-responsive img-rounded"></a>
+            }
+            
             <div id="">
                 <h3 id="realName"></h3>
                 @foreach (var user in ViewBag.user)
@@ -28,7 +32,7 @@
 
             </div>
         </div>
-
+      
         <div class="col-lg-3 col-sm-4 col-xs-6">
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
@@ -72,28 +76,28 @@
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-cog text-info"></span><a href="#" class="">
-                                            Update Steam64 id
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-lock text-warning"></span><a href="#" class="">
-                                            Change Password
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-trash text-danger"></span><a href="#" class="text-danger">
-                                            Delete Account
-                                        </a>
-                                    </td>
-                                </tr>
+                           <table class="table">
+<tr>
+    <td>
+        <span class="glyphicon glyphicon-cog text-info"></span><a href="#" class="">
+            <span class="" data-toggle="modal" data-target="#updateSteam64" id="">Update Steam64</span>
+        </a>
+    </td>
+</tr>
+<tr>
+    <td>
+        <span class="glyphicon glyphicon-lock text-warning"></span><a href="#" class="">
+            <span class="" data-toggle="modal" data-target="#updatePassword" id="">Change Password</span>
+        </a>
+    </td>
+</tr>
+<tr>
+    <td>
+        <span class="glyphicon glyphicon-trash text-danger"></span><a href="#" class="text-danger">
+            <span class="" data-toggle="modal" data-target="#deleteAccount" id="">Delete Account</span>
+        </a>
+    </td>
+</tr>
                             </table>
                         </div>
                     </div>
@@ -102,6 +106,127 @@
             </div>
         </div>
     </div>
+    @*<div class="col-lg-4 pull-right">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    @foreach (var item in ViewBag.list)
+                    {
+                        <div class="slide">@item.GamesInList[0].Name</div>
+                    }
+                </div>
+
+                <div class="item">
+                    @foreach (var item in ViewBag.list)
+                    {
+                        <p>@item.GamesInList[1].Name</p>
+                    }
+                </div>
+
+                <div class="item">
+                    @foreach (var item in ViewBag.list)
+                    {
+                        <p>@item.GamesInList[2].Name</p>
+                    }
+                </div>
+
+                <div class="item">
+                    @foreach (var item in ViewBag.list)
+                    {
+                        <p>@item.GamesInList[3].Name</p>
+                    }
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>*@
+
 </div>
 <script src="~/scripts/jquery-2.2.3.min.js"></script>
 <script src="~/scripts/UserProfile.js"></script>
+
+
+<div class="modal fade" id="updateSteam64">
+    <div class="modal-dialog modal-sm">
+
+        <div class="container">
+            <div class="row">
+
+                <form method="post" action="@Url.Action("Login", "User")">
+                    <div class="col-lg-4 col-sm-4 col-xs-6">
+                        <div class="panel panel-info">
+                            <div class="list-group-item"><input class="form-control" name="steam64uid" type="text" placeholder="Steam64 ID"></div>
+                            <nav class="text-center">
+                                <button name="updSteam" class="btn-sm btn-success" type="submit">ok</button>
+                            </nav>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL - Update Password -->
+<div class="modal fade" id="updatePassword">
+    <div class="modal-dialog modal-sm">
+
+        <div class="container">
+            <div class="row">
+
+                <form method="post" action="@Url.Action("Login", "User")">
+                    <div class="col-lg-4 col-sm-4 col-xs-6">
+                        <div class="panel panel-info">
+                            <div class="list-group-item"><input class="form-control" name="newPassRow1" type="password" placeholder="new password"></div>
+                            <div class="list-group-item"><input class="form-control" name="newPassRow2" type="password" placeholder="confirm password" required></div>
+                            <nav class="text-center">
+                                <button name="updPWbtn" class="btn-sm btn-success" type="submit">ok</button>
+                            </nav>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL - Update Password -->
+<div class="modal fade" id="deleteAccount">
+    <div class="modal-dialog modal-sm">
+
+        <div class="container">
+            <div class="row">
+
+                <form method="post" action="@Url.Action("Login", "User")">
+                    <div class="col-lg-4 col-sm-4 col-xs-6">
+                        <div class="panel panel-info">
+                            <nav class="text-center">
+                                <p>Are you sure you want to remove your account from our database?</p>
+                                <button class="btn-sm btn-default" type="submit">cancel</button>
+                                <button class="btn-sm btn-warning" type="submit">delete</button>
+                            </nav>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
